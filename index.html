@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Particle Experience</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="animated-header">
+        <h1 class="title-glow">Interactive Particle Universe</h1>
+        <p class="subtitle-fade">Watch the magic unfold with CSS3 & JavaScript</p>
+    </header>
+
+    <main class="container">
+        <div class="control-panel">
+            <h2>Control Panel</h2>
+            
+            <button class="neon-button primary" onclick="createParticleExplosion()">
+                ✨ Particle Explosion
+            </button>
+            
+            <button class="neon-button secondary" onclick="toggleGravityMode()">
+                🌍 Toggle Gravity
+            </button>
+            
+            <button class="neon-button accent" onclick="resetParticles()">
+                🔄 Reset Scene
+            </button>
+            
+            <button class="neon-button danger" onclick="triggerScreenShake()">
+                📳 Screen Shake
+            </button>
+
+            <div class="slider-container">
+                <label for="particleCount">Particle Count: <span id="countDisplay">20</span></label>
+                <input type="range" id="particleCount" min="5" max="50" value="20" 
+                       oninput="updateParticleCount(this.value)">
+            </div>
+        </div>
+
+        <div class="particle-container" id="particleContainer">
+            <div class="loading-spinner" id="loadingSpinner">
+                <div class="spinner-ring"></div>
+                <p>Generating Particles...</p>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3>Current Status</h3>
+            <p>Gravity Mode: <span id="gravityStatus" class="status-indicator">OFF</span></p>
+            <p>Active Particles: <span id="particleStatus" class="status-indicator">0</span></p>
+            <p>Animation Speed: <span id="speedStatus" class="status-indicator">Normal</span></p>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <h3 id="modalTitle">Notification</h3>
+            <p id="modalMessage">Something happened!</p>
+            <button class="modal-close" onclick="closeModal()">Got it!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
